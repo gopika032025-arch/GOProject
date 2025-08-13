@@ -47,7 +47,7 @@ func main() {
 		fmt.Println(i)
 	}
 	// --- pointers ---
-	j := 9
+	j := 8
 	fmt.Println("Before:", j)
 	increase(&j)
 	fmt.Println("After:", j)
