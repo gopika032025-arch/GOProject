@@ -5,6 +5,23 @@ import (
 	"fmt"
 )
 
+// -----
+type Car struct {
+	Name  string
+	Speed int // in km/h
+}
+
+// ---Method increase speed
+func (c *Car) accelerate(extra int) {
+	c.Speed = c.Speed + extra
+}
+
+//----function to add bonus marks-----
+
+func addBonus(marks *int) {
+	*marks = *marks + 5
+}
+
 // --- Declaration---Structures -----
 type College struct {
 	Name  string
@@ -132,6 +149,53 @@ func main() {
 	s = append(s, 4)       // Add element at the end
 	s = append(s, 3)
 	fmt.Println(s)
+
+	//-----Class 3 --Maps//
+
+	fruits := map[string]int{
+		"Apple":  100,
+		"Banana": 40,
+	}
+
+	//-----add new fruit----
+	fruits["Orange"] = 60
+
+	//----- printing the price of Apple
+	fmt.Println("Apple price:", fruits["Apple"])
+
+	//------check if Mango is present
+	if val, ok := fruits["Mango"]; ok {
+		fmt.Println("Mango price is", val)
+	} else {
+		fmt.Println("Mango is not available")
+	}
+
+	for i, v := range fruits {
+		fmt.Println(i, v)
+
+	}
+
+	// For deleting
+
+	delete(fruits, "Apple")
+
+	//--------Pointers & Func
+
+	studentMarks := 40
+	fmt.Println("Before Bonus:", studentMarks)
+
+	addBonus(&studentMarks) // passing address
+	fmt.Println("After Bonus:", studentMarks)
+
+	//----------Method--------
+
+	myCar := Car{Name: "Toyota", Speed: 60}
+
+	fmt.Println("Before:", myCar.Name, "speed is", myCar.Speed)
+
+	myCar.accelerate(20) // method call
+
+	fmt.Println("After:", myCar.Name, "speed is", myCar.Speed)
 }
 
 func increase(num *int) {
