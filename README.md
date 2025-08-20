@@ -12,3 +12,4 @@
 ..Map fruits → sstore data in key–value pairs (like fruit → price)
 
 ..Struct Car with method accelerate() → increases car speed
+ 
